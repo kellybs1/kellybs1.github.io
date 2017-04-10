@@ -74,11 +74,11 @@ html {
 	 margin-left: auto;
 	 text-align: center;
  }
- 
- 
+
  .contentText {
 	 font-size: 18px; 
  }
+ 
 .center-to-right {
 	 display: block;
 	 margin-right: auto;
@@ -139,7 +139,6 @@ html {
 	padding: 0px 0px 80px 0px;
  }
  
-
 .file {
   visibility: hidden;
   position: absolute;

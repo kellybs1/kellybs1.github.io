@@ -16,23 +16,23 @@ html {
 
 #greeting {
 	font-weight: bold;
-	font-size: 20px;
+	font-size: 25px;
 	padding: 0px 0px 10px 0px;
 }
 
 #instructions {
-	font-size: 15px;
+	font-size: 20px;
 	padding: 0px 0px 10px 0px;
 }
 
 #scoreOut {
-	font-size: 20px;
+	font-size: 25px;
 	padding: 0px 0px 10px 0px;
 }
 
 #status {
 	font-weight: bold;
-	font-size: 25px;
+	font-size: 30px;
 }
 
 #div1{
@@ -42,6 +42,11 @@ html {
 	border:1px solid #aaaaaa;
 }
 
+.contentText {
+	font-size: 20px;
+}
+
+
 .container {
 	color:white;
 }
@@ -49,10 +54,12 @@ html {
 .navbar  {
 	margin-bottom: 0px;
 	background-color: black;
+	font-size: 19px;
 }
 
 .navbar-default .navbar-brand {
     color: white;
+	font-size: 19px;
 }
 
 .navbar-default .navbar-brand:focus, .navbar-default .navbar-brand:hover {
@@ -103,11 +110,11 @@ html {
 }
 
 #footerRightCol{
-	padding: 11px 0px 0px 0px;
+	padding: 6px 0px 0px 0px;
 }
 
 #footerLeftCol{
-	padding: 15px 0px 0px 0px;
+	padding: 10px 0px 0px 0px;
 }
 
 #dropdownMenu1{

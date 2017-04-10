@@ -13,7 +13,7 @@
     <link href='https://fonts.googleapis.com/css?family=Questrial' rel='stylesheet' type='text/css'>
 </head>
 
-<body onload="main();">
+<body onload="Snake();">
 
     <div id="topNavbar" class="navbar navbar-default navbar-fixed-top">
         <div class="container">
@@ -57,7 +57,7 @@
 					
 		<canvas id="myCanvas" width="480" height="340" style="border:1px solid #000000;"></canvas>
 		<script>
-		  function main() {
+		  function Snake() {
 			var scoreMain = 0;
 			var scoreMove = 1;
 			var scoreEat = 1000;
@@ -233,24 +233,29 @@
 			  var event = window.event ? window.event : e;
 			  switch (event.keyCode) {
 				case 38:
+				e.preventDefault();
 				  direction = 1;
 				  break;
 
 				case 39:
+				e.preventDefault();
 				  direction = 2;
 				  break;
 
 				case 40:
+				e.preventDefault();
 				  direction = 3;
 				  break;
 
 				case 37:
+				e.preventDefault();
 				  direction = 4;
 				  break;
 				  
-				   case 82:
-					reloadPage();
-					break;
+				case 82:
+				e.preventDefault();
+				  reloadPage();
+				  break;
 			  }
 			}
 			

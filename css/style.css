@@ -42,6 +42,7 @@ html {
 	border:1px solid #aaaaaa;
 }
 
+
 .container {
 	color:white;
 }
@@ -52,21 +53,26 @@ html {
 	font-size: 19px;
 }
 
+
 .navbar-default .navbar-brand {
     color: white;
 }
 
+
 .navbar-default .navbar-brand:focus, .navbar-default .navbar-brand:hover {
     color: #337ab7;
-}
+} 
+
 
 .navbar-default .navbar-nav > li > a {
     color: white;
 }
 
+
 .navbar-default .navbar-nav > li > a:focus, .navbar-default .navbar-nav > li > a:hover {
     color: #337ab7;
 	}
+	
 	
 .center-to-left {
 	 display: block;
@@ -75,9 +81,11 @@ html {
 	 text-align: center;
  }
 
+ 
  .contentText {
 	 font-size: 18px; 
  }
+ 
  
 .center-to-right {
 	 display: block;

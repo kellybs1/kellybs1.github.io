@@ -1,5 +1,5 @@
 * { 
-	font-family: 'Questrial', sans-serif; }
+	font-family: 'Montserrat', sans-serif; }
 
 body {
     background-color: black;
@@ -48,15 +48,15 @@ html {
 }
 
 .navbar  {
-	font-size: 19px;
+	font-size: 22px;
 }
 
  .contentText {
-	 font-size: 18px; 
+	 font-size: 20px; 
  }
  
  .navbar-brand {
-	 font-size: 22px;
+	 font-size: 24px;
  }
  
 

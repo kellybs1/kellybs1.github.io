@@ -3,7 +3,7 @@
 
 body {
     background-color: black;
-    padding-top: 50px;	
+    padding-top: 110px;	
 }
 
 html { 
@@ -35,75 +35,30 @@ html {
 	font-size: 30px;
 }
 
-#div1{
-	width:350px;
-	height:350px;
-	padding:10px;
-	border:1px solid #aaaaaa;
+#awesomeicons {
+	padding: 4px 5px 0px 0px;
 }
 
+#navlinks {
+	padding: 8px 0px 0px 0px;
+}
 
 .container {
 	color:white;
 }
 
 .navbar  {
-	margin-bottom: 0px;
-	background-color: black;
 	font-size: 19px;
 }
 
-
-.navbar-default .navbar-brand {
-    color: white;
-}
-
-
-.navbar-default .navbar-brand:focus, .navbar-default .navbar-brand:hover {
-    color: #337ab7;
-} 
-
-
-.navbar-default .navbar-nav > li > a {
-    color: white;
-}
-
-
-.navbar-default .navbar-nav > li > a:focus, .navbar-default .navbar-nav > li > a:hover {
-    color: #337ab7;
-	}
-	
-	
-.center-to-left {
-	 display: block;
-	 margin-right: auto;
-	 margin-left: auto;
-	 text-align: center;
- }
-
- 
  .contentText {
 	 font-size: 18px; 
  }
  
- 
-.center-to-right {
-	 display: block;
-	 margin-right: auto;
-	 margin-left: auto;
-	 text-align: center;
+ .navbar-brand {
+	 font-size: 22px;
  }
  
-
-.dropdown{
-	padding-top:25px;	
-}
-
-
-#mainDiv{	
-	width:75%;
-	margin:0 auto;
-}
 
 #left{
 	float:left;
@@ -115,41 +70,11 @@ html {
 	width:50%;
 }
 
-#footerRightCol{
-	padding: 6px 0px 0px 0px;
-}
-
-#footerLeftCol{
-	padding: 10px 0px 0px 0px;
-}
-
-#dropdownMenu1{
-	width: 80px;
-}
-
-
-.dropDowns{
-	padding: 10px 10px 10px 10px;
-}
 
 .clear
 {
 	clear: both;
 }
-
-.myTitle {
-	text-align: center;
-	padding: 10px 0px 30px 0px;
-	margin: 0 auto;
-}
  
- #indexContainer {
-	padding: 0px 0px 80px 0px;
- }
  
-.file {
-  visibility: hidden;
-  position: absolute;
-}
-
 

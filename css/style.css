@@ -75,10 +75,13 @@ html {
 }
 
 
-.clear
-{
+.clear{
 	clear: both;
 }
+ 
+ .sideDiv {
+	 padding: 50px 0px 0px 0px;
+ }
  
  @media screen and (max-width: 1024px) {
     .snake{

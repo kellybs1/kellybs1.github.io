@@ -55,25 +55,35 @@
 			  <br> Press R to restart
 			</div>
 						
-			<canvas id="myCanvas" width="760" height="400" style="border:1px solid #000000;"></canvas>
+			<!-- set up canvas -->
+			<canvas id="myCanvas" width="560" height="280" style="border:1px solid #000000;"></canvas>
+			<!-- now Javascript -->
 			<script>
 			  function Snake() {
+				//set up global variables
 				var scoreMain = 0;
 				var scoreMove = 1;
 				var scoreEat = 1337;
 				var direction;
 				var blockSize = 20;
 				var timerTick = 85;
-				var snakeTails = [];
-				var c = document.getElementById("myCanvas");
+				var snakeTails = [];			
+				//get the canvas that we set up above to draw on
+				var c = document.getElementById("myCanvas"); 
 				var board = c.getContext("2d");
+				//useful positioning
 				var centerWidth = c.width / 2;
 				var centerHeight = c.height / 2;
+				//snake and frog objects
 				var snake = {xPos: centerWidth, yPos: centerWidth - blockSize, size: blockSize, colour: '#FF9933'}
 				var frog = {xPos: 0, yPos: 0, size: blockSize, alive: false, colour: '#006600'}
+				
+				//clears the screen
 				function clearScreen() {
 				  board.clearRect(0, 0, c.width, c.height);
 				}
+				
+				//draws a square on screen at given x and y, in the given colour
 				function drawBlock(xPos, yPos, fillColour) {
 				  board.fillStyle = fillColour;
 				  board.fillRect(xPos, yPos, blockSize, blockSize);
@@ -101,6 +111,7 @@
 				function checkFrogSpawnClear(xPos, yPos) {
 				  var clear = true;
 				  for (i = 0; i < snakeTails.length; i++) {
+					//match the given xpos and ypos to the current section of the tail
 					if (xPos == snakeTails[i].xPos && yPos == snakeTails[i].yPos) {
 					  clear = false;
 					}
@@ -111,7 +122,7 @@
 				//Checks that position values are multiples of blocksize
 				function blockSizeMultiple(xPos, yPos) {
 				  var isMultiple = true;
-				  if (xPos % blockSize > 0 || xPos % blockSize < 0 || yPos % blockSize > 0 || yPos % blockSize < 0) {
+				  if (xPos % blockSize != 0 || yPos % blockSize != 0) {
 					isMultiple = false;
 				  }
 				  return isMultiple;

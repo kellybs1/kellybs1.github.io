@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="robots" content="index,follow">
+	<meta name="googlebot" content="index,follow">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Brendan Kelly</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ"
+	 crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n"
+	 crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb"
+	 crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
+	 crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:200" rel='stylesheet' type='text/css'>
+	<link href="css/normalize.css" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+	<nav class="navbar navbar-toggleable-sm navbar-inverse fixed-top bg-inverse justify-content-center">
+		<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+		<a class="navbar-brand navbar-brand-flex w-50 mr-auto" href="index.html">Brendan Kelly</a>
+		<div class="collapse navbar-collapse" id="navbarCollapse">
+			<ul class="navbar-nav mx-auto w-100 justify-content-center">
+				<li class="nav-item" id="navlinks"><a class="nav-link" href="index.html">Home</a></li>
+				<li class="nav-item active" id="navlinks"><a class="nav-link" href="portfolio.html">Portfolio</a></li>
+				<li class="nav-item" id="navlinks"><a class="nav-link" href="about.html">About</a></li>
+				<li class="nav-item" id="navlinks"><a class="nav-link" href="contact.html">Contact</a></li>
+			</ul>
+			<ul class="nav navbar-nav ml-auto w-100 justify-content-end">
+				<li class="nav-item" id="awesomeicons"><a class="nav-link" href="https://www.facebook.com/brendanskellyNZ"><i class ="fa fa-facebook-square fa-2x"></i></a></li>
+				<li class="nav-item" id="awesomeicons"><a class="nav-link" href="https://twitter.com/brendanskellyNZ"><i class ="fa fa-twitter fa-2x"></i></a></li>
+				<li class="nav-item" id="awesomeicons"><a class="nav-link" href="https://www.linkedin.com/in/brendan-kelly-93857b140/"><i class ="fa fa-linkedin-square fa-2x"></i></a></li>
+				<li class="nav-item" id="awesomeicons"><a class="nav-link" href="https://github.com/kellybs1"><i class ="fa fa-github-square fa-2x"></i></a></li>
+			</ul>
+		</div>
+	</nav>
+
+	<div class="container">
+		<h1>Using a genetic algorithm to evolve artwork</h1>
+		<div class="contentText">	
+		 	<br />
+			<h3>Introduction</h3>
+
+			As part of the IN711/Algorithms and Data Structures paper, a practical involved writing a genetic algorithm to mimic a set a of coloured squares (a chromosome).
+
+			<br /><br /><br />
+			<h3>Process</h3>
+
+			The basic flow of the algorithm is:
+			<ul type="circle">
+				<li>Generate a population of random images</li>
+					<ul type="circle">
+						<li>While the total Cost of the best image is greater than zero:</li>
+						<ul type="circle">
+							<li>Compare each member of the population to the target image and store each difference (Cost)</li>
+							<li>Arrange the population by lowest cost (closest image accuracy)</li>
+							<li>Divide the population at a given spot (usually half-way)</li>
+							<li>Randomly select pairs from the "top" half</li>
+							<li>Create "child" images by combining sections of the selected pairs</li>
+							<li>Overwrite the "bottom" half of the population with the new children</li>
+							<li>Randomly mutate specific genes across the population</li>
+						</ul>
+					</ul>
+			</ul>
+
+			<br /><br />
+			<h5>Some process details</h5>
+
+			Images are loaded into an array of Color objects.<br />
+			The Cost is calculated as the total absolute difference between the RGB values of each pixel in the image.<br />
+			Multiple parameters are set at run-time by the user. For example, the probability of mutation across the population, 
+			and how often to draw the image to screen - this values also serves as a trigger to save the current image file to disk.
+			
+			<br /><br /><br />
+			<h4>Examples</h4>
+
+			The original test image was a 4x4 image comprised of a pattern of 6 colours; black, white, grey, red, blue and a lighter blue:<br />
+			
+			<div class = "codeText">
+			public static Color[] TARGET_DRAW16 = { wh, lb, db, bl,
+                                                    gr, re, gr, re,
+                                                    re, gr, re, gr,
+                                                    bl, db, lb, wh };
+			</div>
+			
+			<br />
+			<h5>Test simulation results</h5>
+
+			The first generation's fittest candidate had a cost of 3825.<br />
+			<img src="geneticAlgorithmImg/10_09_2017_13_51_06.109_Gen-1_Cost-3825.bmp" width="256"><br /><br />
+
+			At 600 generations, after 40 milliseconds, the pattern is becoming visible, with a cost of 840.<br />
+			<img src="geneticAlgorithmImg/10_09_2017_13_51_06.149_Gen-600_Cost-840.bmp" width="256"><br /><br />
+
+			At 13000 generations, after around 900 milliseconds, the pattern is clearly visible, with a cost of 366.<br />
+			<img src="geneticAlgorithmImg/10_09_2017_13_51_06.935_Gen-13000_Cost-366.bmp" width="256"><br /><br />
+
+
+			Continuing from this point brings minor improvements over a longer time. At generation 24000, after around 17 seconds, differences in the shades are only slightly perceptible, with a cost of 94.<br />
+			<img src="geneticAlgorithmImg/10_09_2017_13_51_22.920_Gen-240000_Cost-94.bmp" width="256"><br /><br />
+
+			<br /><br />
+			<h4>Pixel Art</h4>
+
+			The idea was that if everything above worked, it should be trivial to apply the above algorithm to any image. <br /><br />
+
+			A 32x32 array comprised of 6 Colors representing a popular video game character was loaded to test the algorithm with more complex images,
+			After some experimentation to find efficient parameters (more on this later) the results were positive.<br /><br />
+
+			This video shows a series of images saved every 200 generations, starting with generation 1 at a cost of 364452, running to generation 121200 with a cost of 49987. 
+			The processing time was around 2 minutes and 45 seconds.<br />
+			<div class="text-center">
+				<iframe width="720" height="405" src="https://www.youtube.com/embed/WES6iG9sWGE?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe><br /><br />
+			</div>
+			
+
+			At this point it became obvious that hand-coding arrays of Color objects is silly.
+
+
+			<br /><br />
+			<h4>Contemporary Art</h4>
+
+			The application was modified to accept images of the resolutions 8x8, 16x16, 32x32, 64x64, 128x128, 256x256, and 512x512. <br />
+			The images are iterated over and each pixel's RGB values is saved into a new target array.<br />
+			The application draws onto a canvas of 512x512 and the sizes of pixels required to fill the canvas properly are calculated at run-time.<br /><br />
+
+			After some experimentation, it was found the value of the probability to mutate (prMutate) needs to be lowered as the image resolution and thus the chromosome size, increases.<br />
+			For example, for  a population of 16 32x32 images, a good prMutate is 0.01:<br />
+			16 * 32 * 32 * 0.01 = 163.84 (164 mutations per generation).<br />
+			Or for a population of 16 128x128 images, 0.00004:<br />
+			16 * 128 * 128 * 0.0002 = 52.4288 (52 mutations per generation).<br /><br />
+
+			Note: Populations over 16 have not been tested thoroughly as the time required for evolving large populations of high resolution images were found to be restrictive.<br /><br />
+
+
+			A 128x128 square section of René Magritte's 1964 artwork <a href="https://en.wikipedia.org/wiki/The_Son_of_Man">The Son of Man</a> was chosen as a test image due to subtle 
+			shades in dark/grey colours mixed with highly contrasted, bright colours.<br /><br />
+
+			This video shows a series of images saved every 1000 generations, starting with generation 1 at a cost of 3,851,292, running to generation 550000 with a cost of 694,811. 
+			The processing time was around 3 hours, 45 minutes, and 10 seconds.<br />
+			<div class="text-center">
+				<iframe width="720" height="405" src="https://www.youtube.com/embed/R14TKmwmBRE?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+			</div>
+
+			
+			<br /><br />
+			Incoming - a 512x512 image - if it ever finishes...<br />
+			Incoming - Source code<br />
+			
+			<br /><br />
+			Thanks to Jordan A and Liam H for help with discussion, ideas, and fixing bugs in my code :)
+		</div>
+	</div>
+<br /><br />
+</body>
+
+</html>

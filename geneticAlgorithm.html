@@ -45,7 +45,7 @@
 	</nav>
 
 	<div class="container">
-		<h1>Using a genetic algorithm to evolve artwork</h1>
+		<h1><b>Using a genetic algorithm to evolve artwork</b></h1>
 		<div class="contentText">	
 		 	<br />
 			<h3>Introduction</h3>
@@ -54,7 +54,7 @@
 			I expanded on this idea to allow the application to evolve into user-supplied images of varying sizes.
 
 			<br /><br /><br />
-			<h3>Process</h3>
+			<h3><b>Process</b></h3>
 
 			The basic flow of the algorithm is:
 			<ul type="circle">
@@ -74,7 +74,7 @@
 			</ul>
 
 			<br /><br />
-			<h5>Some process details</h5>
+			<h5><b>Some process details</b></h5>
 
 			The application was implemented in C#.<br />
 			Images are loaded into an array of Color objects.<br />
@@ -83,7 +83,7 @@
 			and how often to draw the image to screen - this values also serves as a trigger to save the current image file to disk.
 			
 			<br /><br /><br />
-			<h4>Examples</h4>
+			<h4><b>Examples</b></h4>
 
 			The original test image was a 4x4 image comprised of a pattern of 6 colours; black, white, grey, red, blue and a lighter blue:<br />
 			
@@ -94,8 +94,8 @@
                                                     bl, db, lb, wh };
 			</div>
 			
-			<br />
-			<h5>Test simulation results</h5>
+			<br /><br />
+			<h5><b>Test simulation results</b></h5>
 
 			The first generation's fittest candidate had a cost of 3825.<br />
 			<img src="geneticAlgorithmImg/10_09_2017_13_51_06.109_Gen-1_Cost-3825.bmp" width="256"><br /><br />
@@ -103,22 +103,22 @@
 			At 600 generations, after 40 milliseconds, the pattern is becoming visible, with a cost of 840.<br />
 			<img src="geneticAlgorithmImg/10_09_2017_13_51_06.149_Gen-600_Cost-840.bmp" width="256"><br /><br />
 
-			At 13000 generations, after around 900 milliseconds, the pattern is clearly visible, with a cost of 366.<br />
+			At 13,000 generations, after around 900 milliseconds, the pattern is clearly visible, with a cost of 366.<br />
 			<img src="geneticAlgorithmImg/10_09_2017_13_51_06.935_Gen-13000_Cost-366.bmp" width="256"><br /><br />
 
 
-			Continuing from this point brings minor improvements over a longer time. At generation 24000, after around 17 seconds, differences in the shades are only slightly perceptible, with a cost of 94.<br />
+			Continuing from this point brings minor improvements over a longer time. At generation 240,000, after around 17 seconds, differences in the shades are only slightly perceptible, with a cost of 94.<br />
 			<img src="geneticAlgorithmImg/10_09_2017_13_51_22.920_Gen-240000_Cost-94.bmp" width="256"><br /><br />
 
 			<br /><br />
-			<h4>Pixel Art</h4>
+			<h4><b>Pixel Art</b></h4>
 
 			The idea was that if everything above worked, it should be trivial to apply the above algorithm to any image. <br /><br />
 
-			A 32x32 array comprised of 6 Colors representing a popular video game character was loaded to test the algorithm with more complex images,
+			A 32x32 array comprised of six Colors representing a popular video game character was loaded to test the algorithm with more complex images,
 			After some experimentation to find efficient parameters (more on this later) the results were positive.<br /><br />
 
-			This video shows a series of images saved every 200 generations, starting with generation 1 at a cost of 364452, running to generation 121200 with a cost of 49987. 
+			This video shows a series of images saved every 200 generations, starting with generation 1 at a cost of 364,452, running to generation 121,200 with a cost of 49,987. 
 			The processing time was around 2 minutes and 45 seconds.<br />
 			<div class="text-center">
 				<iframe width="720" height="405" src="https://www.youtube.com/embed/WES6iG9sWGE?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe><br /><br />
@@ -129,7 +129,7 @@
 
 
 			<br /><br />
-			<h4>Contemporary Art</h4>
+			<h4><b>Loading User-provided Art</b></h4>
 
 			The application was modified to accept images of the resolutions 8x8, 16x16, 32x32, 64x64, 128x128, 256x256, and 512x512. <br />
 			The images are iterated over and each pixel's RGB values is saved into a new target array.<br />
@@ -141,13 +141,14 @@
 			Or for a population of 16 128x128 images, 0.00004:<br />
 			16 * 128 * 128 * 0.0002 = 52.4288 (52 mutations per generation).<br /><br />
 
-			Note: Populations over 16 have not been tested thoroughly as the time required for evolving large populations of high resolution images were found to be restrictive.<br /><br />
-
-
+			Note: Populations over 16 were not tested thoroughly as the time required for evolving large populations of high resolution images were found to be restrictive.<br /><br />
+			
+			<br />
+			<h5><b>Higher resolution examples</b></h5>
 			A 128x128 square section of René Magritte's 1964 artwork <a href="https://en.wikipedia.org/wiki/The_Son_of_Man">The Son of Man</a> was chosen as a test image due to subtle 
 			shades in dark/grey colours mixed with highly contrasted, bright colours.<br /><br />
 
-			This video shows a series of images saved every 1000 generations, starting with generation 1 at a cost of 3,851,292, running to generation 550000 with a cost of 694,811. 
+			This video shows a series of images saved every 1000 generations, starting with generation 1 at a cost of 3,851,292, running to generation 550,000 with a cost of 694,811. 
 			The processing time was around 3 hours, 45 minutes, and 10 seconds.<br />
 			<div class="text-center">
 				<iframe width="720" height="405" src="https://www.youtube.com/embed/R14TKmwmBRE?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>

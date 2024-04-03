@@ -35,6 +35,11 @@ html {
 	font-size: 30px;
 }
 
+#finalOutput {
+	font-weight: bold;
+	font-size: 30px;
+}
+
 #awesomeicons {
 	padding: 4px 5px 0px 0px;
 }

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="robots" content="index,follow">
+	<meta name="googlebot" content="index,follow">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Brendan Kelly</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ"
+	 crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n"
+	 crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb"
+	 crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
+	 crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:200" rel='stylesheet' type='text/css'>
+	<link href="css/normalize.css" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet">
+</head>
+
+<body onload="SpongeBob();">
+	<nav class="navbar navbar-toggleable-sm navbar-inverse fixed-top bg-inverse justify-content-center">
+		<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<a class="navbar-brand navbar-brand-flex w-50 mr-auto" href="index.html">Brendan Kelly</a>
+		<div class="collapse navbar-collapse" id="navbarCollapse">
+			<ul class="navbar-nav mx-auto w-100 justify-content-center">
+				<li class="nav-item" id="navlinks">
+					<a class="nav-link" href="index.html">Home</a>
+				</li>
+				<li class="nav-item" id="navlinks">
+					<a class="nav-link" href="code.html">Code</a>
+				</li>
+				</li>
+				<li class="nav-item" id="navlinks">
+					<a class="nav-link" href="about.html">About</a>
+				</li>
+				<li class="nav-item" id="navlinks">
+					<a class="nav-link" href="contact.html">Contact</a>
+				</li>
+			</ul>
+			<ul class="nav navbar-nav ml-auto w-100 justify-content-end">
+				<li class="nav-item" id="awesomeicons">
+					<a class="nav-link" href="https://www.facebook.com/brendanskellyNZ">
+						<i class="fa fa-facebook-square fa-2x"></i>
+					</a>
+				</li>
+				<li class="nav-item" id="awesomeicons">
+					<a class="nav-link" href="https://twitter.com/brendanskellyNZ">
+						<i class="fa fa-twitter fa-2x"></i>
+					</a>
+				</li>
+				<li class="nav-item" id="awesomeicons">
+					<a class="nav-link" href="https://www.linkedin.com/in/brendan-kelly-93857b140/">
+						<i class="fa fa-linkedin-square fa-2x"></i>
+					</a>
+				</li>
+				<li class="nav-item" id="awesomeicons">
+					<a class="nav-link" href="https://github.com/kellybs1">
+						<i class="fa fa-github-square fa-2x"></i>
+					</a>
+				</li>
+			</ul>
+		</div>
+	</nav>
+	<div align="center" class="container">
+		<h1>Mocking SpongeBob</h1>
+		<br />
+
+		<input type="text" class="form-control input-med" id="userInput" maxlength="100" style='width: 75%; object-fit: contain' /> 
+		<br /><br />
+		<img src="img/mocking-spongebob.jpg" style='height: 75%; width: 75%; object-fit: contain' />
+		<br /><br />
+		<div>
+			<!-- now Javascript -->
+			<script>
+				function SpongeBob() {
+					// Find the input
+					var input = document.getElementById("userInput");
+					// add the event listener
+					input.addEventListener("input", updateValue);
+
+					// Define what happens when the event triggers
+					function updateValue(e) {
+						
+						output = "";
+
+						// Make ever even character upper case, and every odd lower case
+						for (i = 0; i < input.value.length; i++) {
+							if (i % 2 === 0)
+							{
+								output += input.value[i].toUpperCase();
+							}
+							else
+							{
+								output += input.value[i].toLowerCase();
+							}
+						}
+						
+						// Set the final output
+						document.getElementById("finalOutput").innerHTML = output;
+					}
+				}
+			</script>
+
+			<!--Sets up divs for score output and game over text-->
+			<div id="finalOutput"> </div>
+		</div>
+	</div>
+	</div>
+</body>
+
+</html>

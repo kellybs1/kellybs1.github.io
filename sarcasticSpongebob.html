@@ -90,14 +90,12 @@
 						
 						output = "";
 
-						// Make ever even character upper case, and every odd lower case
+						// Make every even character upper case, and every odd lower case
 						for (i = 0; i < input.value.length; i++) {
-							if (i % 2 === 0)
-							{
+							if (i % 2 === 0) {
 								output += input.value[i].toUpperCase();
 							}
-							else
-							{
+							else {
 								output += input.value[i].toLowerCase();
 							}
 						}
@@ -108,7 +106,7 @@
 				}
 			</script>
 
-			<!--Sets up divs for score output and game over text-->
+			<!--Sets up div for text output-->
 			<div id="finalOutput"> </div>
 		</div>
 	</div>
